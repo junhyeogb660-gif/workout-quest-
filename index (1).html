@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 운동 퀘스트</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1><span class="header-emoji">💪</span> 오늘의 운동 퀘스트</h1>
+            <p>오늘 운동할 부위를 선택하고 루틴을 시작하세요! ⚡</p>
+        </header>
+
+        <section class="routine-selector">
+            <button class="selector-btn" onclick="부위선택(0)">가슴·삼두</button>
+            <button class="selector-btn" onclick="부위선택(1)">등·이두</button>
+            <button class="selector-btn" onclick="부위선택(2)">어깨</button>
+            <button class="selector-btn" onclick="부위선택(3)">하체</button>
+        </section>
+
+        <div id="day-indicator" class="day-indicator">부위를 선택해주세요 👇</div>
+
+        <main class="mission-card">
+            <div class="mission-display">
+                <p id="mission-text">상단의 부위 버튼을 누르면 오늘의 운동 루틴이 시작됩니다! 🔥</p>
+            </div>
+
+            <div class="button-group">
+                <button id="next-btn" class="btn btn-primary" disabled>다음 종목으로 넘기기 ➡️</button>
+                <button id="complete-btn" class="btn btn-success" disabled>현재 종목 완료 ✔️</button>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="progress-container">
+                <div class="progress-labels">
+                    <span>오늘의 운동 진행률</span>
+                    <span id="progress-text">0 / 6 종목</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <div class="badge-box">
+                현재 등급: <span id="badge-text">헬린이 탈출 시급 🐣</span>
+            </div>
+
+            <div class="streak-container">
+                <div class="streak-title">🔥 이번 주 오운완 스트릭</div>
+                <div class="streak-board" id="streak-board">
+                    <div class="streak-day" data-day="1"><span>월</span><div class="dot"></div></div>
+                    <div class="streak-day" data-day="2"><span>화</span><div class="dot"></div></div>
+                    <div class="streak-day" data-day="3"><span>수</span><div class="dot"></div></div>
+                    <div class="streak-day" data-day="4"><span>목</span><div class="dot"></div></div>
+                    <div class="streak-day" data-day="5"><span>금</span><div class="dot"></div></div>
+                    <div class="streak-day" data-day="6"><span>토</span><div class="dot"></div></div>
+                    <div class="streak-day" data-day="0"><span>일</span><div class="dot"></div></div>
+                </div>
+            </div>
+
+            <div class="counter-box">
+                오늘 완료한 총 종목: <span id="count-number">0</span>개 종목
+            </div>
+
+            <p class="disclaimer">이 앱은 생활습관 참고용입니다.</p>
+
+            <button id="reset-app-btn" class="reset-app-btn" onclick="리셋초기화()">새로운 하루 시작하기 (루틴 초기화) 🔄</button>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
